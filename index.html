@@ -1,4 +1,3 @@
-index.html
 <!doctype html>
 <html lang="vi">
 <head>
@@ -10,7 +9,7 @@ index.html
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.55}
     header{padding:40px 16px 28px;border-bottom:2px solid #e5e7eb;background:#f9fafb}
     header h1{text-align:center;font-size:28px;font-weight:700;margin:0;color:var(--accent)}
-    .container{width:width: 100%;max-width: 100%;margin: 0 auto;padding: 24px;display: flex;gap: 16px;}
+    .container{width:100%;max-width:100%;margin:0 auto;padding:24px;display:flex;gap:16px;}
     .toc{position:sticky;top:90px;align-self:flex-start;width:260px;border:2px solid var(--accent);border-radius:var(--radius);padding:12px;background:#f8fafc;font-size:14px;height:max-content;max-height:80vh;overflow-y:auto;box-shadow:0 4px 14px rgba(0,0,0,0.08);z-index:10}
     .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:14px;line-height:1.35}
     .toc a:hover{background:#eaf2ff}
@@ -25,10 +24,19 @@ index.html
     .steps li.note-step{counter-increment:none;}
     .steps li.note-step::before{content:none;}
     .note{font-size:13px;color:var(--muted);margin:4px 0 0;font-style:italic;line-height:1.5;display:block;padding-left:28px}
+
+    /* Hàng 2 cột: chữ 50% – ảnh 50%, bám đỉnh */
+    .media-row{display:flex;align-items:flex-start;gap:20px;}
+    .media-text{flex:1 1 50%;max-width:50%;}
+    .media-image{flex:1 1 50%;max-width:50%;align-self:flex-start;}
+    .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
+
     @media (max-width: 960px){
       .container{display:block}
       .toc{position:sticky;top:8px;left:auto;width:auto;border:1px solid #e5e7eb;background:#fff;box-shadow:none;margin-bottom:12px}
       .content{margin-left:0}
+      .media-row{display:block}
+      .media-text,.media-image{max-width:100%}
     }
     html{scroll-behavior:smooth}
     header h1{color:var(--text)}
@@ -53,11 +61,12 @@ index.html
       <a href="#cai-dat">1. Cài đặt trung tâm</a>
       <a href="#giao-vien">2. Thêm giáo viên</a>
       <a href="#tao-lop">3. Tạo lớp</a>
-     <a href="#lich-hoc">4. Cài lịch học</a>
-    <a href="#phe-duyet">5. Cài đặt phê duyệt</a>
+      <a href="#lich-hoc">4. Cài lịch học</a>
+      <a href="#phe-duyet-tt">5. Cài đặt phê duyệt</a>
     </aside>
+
     <div class="content">
-       <section id="dang-nhap" class="guide-block">
+      <section id="dang-nhap" class="guide-block">
         <h2>🔑 Đăng nhập</h2>
         <ol class="steps">
           <li>Truy cập <a href="https://crm.armyenglish.edu.vn" target="_blank">crm.armyenglish.edu.vn</a>.</li>
@@ -68,70 +77,59 @@ index.html
 
       <section id="tao-trung-tam" class="guide-block">
         <h2>🏢 Tạo trung tâm</h2>
- <div style="display:flex; align-items:flex-start; gap:20px;">
-    <!-- Bên trái: chữ -->
-    <div style="flex:1;">
-      <ol class="steps">
-       <li>Tại màn hình Trang chủ → bấm dấu “+” ở góc phải khu vực danh sách để tạo mới.</li>
-          <li>Hệ thống mở hộp thoại <strong>Tạo trung tâm</strong>.</li>
-          <li>Điền các trường bắt buộc (có dấu *): Tên trung tâm*, Email*, Số điện thoại*, Tỉnh/Thành phố*.<br>– Chọn <strong>Nhóm*</strong> cho trung tâm.<br>– Bật <strong>Active*</strong>.</li>
-          <li>Thông tin thêm (không bắt buộc): Địa chỉ, Link Google Map, Thông tin/Mô tả, Avatar/Logo, Order index. 4 ô hiển thị SL (SL lớp học, SL giáo viên, SL nhân viên, SL học sinh) không cần điền.</li>
-          <li>Bấm nút <strong>Tạo trung tâm</strong> để lưu và hoàn tất.</li>
-      </ol>
-    </div>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Tại màn hình Trang chủ → bấm dấu “+” ở góc phải khu vực danh sách để tạo mới.</li>
+              <li>Hệ thống mở hộp thoại <strong>Tạo trung tâm</strong>.</li>
+              <li>Điền các trường bắt buộc (có dấu *): Tên trung tâm*, Email*, Số điện thoại*, Tỉnh/Thành phố*.<br>– Chọn <strong>Nhóm*</strong> cho trung tâm.<br>– Bật <strong>Active*</strong>.</li>
+              <li>Thông tin thêm (không bắt buộc): Địa chỉ, Link Google Map, Thông tin/Mô tả, Avatar/Logo, Order index. 4 ô hiển thị SL (SL lớp học, SL giáo viên, SL nhân viên, SL học sinh) không cần điền.</li>
+              <li>Bấm nút <strong>Tạo trung tâm</strong> để lưu và hoàn tất.</li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="taotrungtam.png" alt="Ảnh minh họa">
+          </div>
+        </div>
+      </section>
 
-    <!-- Bên phải: ảnh -->
-<div style="display:flex; align-items:flex-start; gap:20px;">
-    <img src="taotrungtam.png" alt="Ảnh minh họa" 
-         style="width:100%;height:auto;border:1px solid #ddd;border-radius:8px; display:block;">
-  </div>
-</div>
-
-</section>
-        
       <em style="display:block;margin-top:20px;font-size:20px;color:var(--accent);font-weight:700">Tại trụ sở chính</em>
+
       <section id="chuong-trinh" class="guide-block">
         <h2>📘 1. Tạo chương trình</h2>
- <div style="display:flex; align-items:flex-start; gap:20px;">
-    <!-- Bên trái: chữ -->
-    <div style="flex:1;">
-      <ol class="steps">
-        <li>Tại TAB Trụ sở chính → chọn <strong>Chương trình</strong> → bấm + <strong>Tạo chương trình</strong>.</li>
-        <li>Nhập <strong>Tên chương trình</strong> và (tùy chọn) <strong>Avatar</strong>.</li>
-        <li>Bấm <strong>Lưu</strong> để hoàn tất.</li>
-        <li class="note-step"><span class="note">Các chương trình tạo tại Hội sở sẽ áp dụng cho toàn bộ trung tâm.</span></li>
-      </ol>
-    </div>
-
-    <!-- Bên phải: ảnh -->
-<div style="display:flex; align-items:flex-start; gap:20px;">
-    <img src="taochuongtrinh.png" alt="Ảnh minh họa" 
-         style="width:100%;height:auto;border:1px solid #ddd;border-radius:8px; display:block;">
-  </div>
-</div>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Tại TAB Trụ sở chính → chọn <strong>Chương trình</strong> → bấm + <strong>Tạo chương trình</strong>.</li>
+              <li>Nhập <strong>Tên chương trình</strong> và (tùy chọn) <strong>Avatar</strong>.</li>
+              <li>Bấm <strong>Lưu</strong> để hoàn tất.</li>
+              <li class="note-step"><span class="note">Các chương trình tạo tại Hội sở sẽ áp dụng cho toàn bộ trung tâm.</span></li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="taochuongtrinh.png" alt="Ảnh minh họa">
+          </div>
+        </div>
       </section>
+
       <section id="goi-phi" class="guide-block">
         <h2>💰 2. Tạo gói phí</h2>
-        <div style="display:flex; align-items:flex-start; gap:20px;">
-    <!-- Bên trái: chữ -->
-    <div style="flex:1;">
-       <ol class="steps">
-          <li>Tại TAB Trụ sở chính → chọn <strong>Gói phí</strong> → bấm + <strong>Thêm gói phí</strong>.</li>
-          <li>Điền thông tin: Loại gói phí*, Tên gói*, Học phí* (sau giảm %), Số buổi học.</li>
-          <li>Bấm <strong>Thêm gói phí</strong> để hoàn tất.</li>
-          <li>Phân phối gói phí: click vào gói phí → chọn chương trình và trung tâm áp dụng → <strong>Cập nhật</strong>.</li>
-          <li class="note-step"><span class="note">Trung tâm chỉ được áp dụng gói phí sau khi phân phối.</span></li>
-        </ol>
-    </div>
-
-    <!-- Bên phải: ảnh -->
-      <div style="flex:0 0 550px; margin-top:0; align-self:flex-start;">
-    <img src="tsogoiphi.png" alt="Ảnh minh họa" 
-         style="width:100%;height:auto;border:1px solid #ddd;border-radius:8px; display:block;">
-  </div>
-</div>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Tại TAB Trụ sở chính → chọn <strong>Gói phí</strong> → bấm + <strong>Thêm gói phí</strong>.</li>
+              <li>Điền thông tin: Loại gói phí*, Tên gói*, Học phí* (sau giảm %), Số buổi học.</li>
+              <li>Bấm <strong>Thêm gói phí</strong> để hoàn tất.</li>
+              <li>Phân phối gói phí: click vào gói phí → chọn chương trình và trung tâm áp dụng → <strong>Cập nhật</strong>.</li>
+              <li class="note-step"><span class="note">Trung tâm chỉ được áp dụng gói phí sau khi phân phối.</span></li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="tsogoiphi.png" alt="Ảnh minh họa">
+          </div>
+        </div>
       </section>
-      
+
       <section id="voucher" class="guide-block">
         <h2>🏷️ 3. Tạo voucher</h2>
         <ol class="steps">
@@ -153,24 +151,22 @@ index.html
       </section>
 
       <em style="display:block;margin-top:40px;font-size:20px;color:var(--accent);font-weight:700">Tại trung tâm</em>
+
       <section id="cai-dat" class="guide-block">
         <h2>🏫 1. Cài đặt trung tâm</h2>
-<div style="display:flex; align-items:flex-start; gap:20px;">
-    <!-- Bên trái: chữ -->
-    <div style="flex:1;">
-      <ol class="steps">
-          <li>Bấm avatar góc phải → chọn <strong>Cài đặt trung tâm</strong>.</li>
-          <li>Phòng học: Vào <strong>Phòng học</strong> → Thêm phòng học tại nút +. Nhập <em>Tên phòng học*, Số lượng chỗ ngồi*</em>, tích <strong>Active*</strong>. Ấn <strong>Tạo phòng học</strong>.<span class="note"> Có thể Chỉnh sửa hoặc Xóa phòng học sau khi tạo.</span></li>
-          <li>Phòng ban &amp; Nhân sự: Vào <strong>Phòng ban</strong> → Thêm phòng ban, nhập thông tin. Tại Phòng ban có nút + → thêm SĐT → tạo tài khoản → thêm vào phòng ban và ghi chức vụ. <span class="note">SĐT là định danh nhanh; đảm bảo không trùng.</span></li>
-          <li>Voucher: Xem những voucher trung tâm đang sử dụng.</li>
-    </div>
-
-    <!-- Bên phải: ảnh -->
-<div style="display:flex; align-items:flex-start; gap:20px;">
-    <img src="caidattrungtam.png" alt="Ảnh minh họa" 
-         style="width:100%;height:auto;border:1px solid #ddd;border-radius:8px; display:block;">
-  </div>
-</div>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Bấm avatar góc phải → chọn <strong>Cài đặt trung tâm</strong>.</li>
+              <li>Phòng học: Vào <strong>Phòng học</strong> → Thêm phòng học tại nút +. Nhập <em>Tên phòng học*, Số lượng chỗ ngồi*</em>, tích <strong>Active*</strong>. Ấn <strong>Tạo phòng học</strong>.<span class="note"> Có thể Chỉnh sửa hoặc Xóa phòng học sau khi tạo.</span></li>
+              <li>Phòng ban &amp; Nhân sự: Vào <strong>Phòng ban</strong> → Thêm phòng ban, nhập thông tin. Tại Phòng ban có nút + → thêm SĐT → tạo tài khoản → thêm vào phòng ban và ghi chức vụ. <span class="note">SĐT là định danh nhanh; đảm bảo không trùng.</span></li>
+              <li>Voucher: Xem những voucher trung tâm đang sử dụng.</li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="caidattrungtam.png" alt="Ảnh minh họa">
+          </div>
+        </div>
       </section>
 
       <section id="giao-vien" class="guide-block">
@@ -186,23 +182,18 @@ index.html
 
       <section id="tao-lop" class="guide-block">
         <h2>📚 3. Tạo lớp</h2>
-
-      <div style="display:flex; align-items:flex-start; gap:20px;">
-    <!-- Bên trái: chữ -->
-    <div style="flex:1;">
-      <ol class="steps">
-          <li>Ở mỗi chương trình sẽ có phần tạo <strong>Category</strong> cho từng chương trình, sau khi tạo category thì ấn vào mục lớp học và tạo lớp.</li>
-          <li>Điền thông tin lớp học: <br>– <strong>Tên lớp*</strong>, <strong>Chương trình*</strong>, <strong>Ngày bắt đầu dự kiến*</strong>, <strong>Ngày kết thúc dự kiến*</strong>. <br>– <strong>Giáo viên*</strong>, <strong>Học sinh tối đa</strong>, <strong>Nhân viên hỗ trợ lớp</strong> (nếu có). <br>– <strong>Avatar</strong> (tùy chọn). <br>– Bật <strong>Kích hoạt*</strong>. <br>– Chọn <strong>Danh mục*</strong>.</li>
-          <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
-        </ol>
-    </div>
-
-    <!-- Bên phải: ảnh -->
-<div style="display:flex; align-items:flex-start; gap:20px;">
-    <img src="taolophoc.png" alt="Ảnh minh họa" 
-         style="width:100%;height:auto;border:1px solid #ddd;border-radius:8px; display:block;">
-  </div>
-</div>
+        <div class="media-row">
+          <div class="media-text">
+            <ol class="steps">
+              <li>Ở mỗi chương trình sẽ có phần tạo <strong>Category</strong> cho từng chương trình, sau khi tạo category thì ấn vào mục lớp học và tạo lớp.</li>
+              <li>Điền thông tin lớp học: <br>– <strong>Tên lớp*</strong>, <strong>Chương trình*</strong>, <strong>Ngày bắt đầu dự kiến*</strong>, <strong>Ngày kết thúc dự kiến*</strong>. <br>– <strong>Giáo viên*</strong>, <strong>Học sinh tối đa</strong>, <strong>Nhân viên hỗ trợ lớp</strong> (nếu có). <br>– <strong>Avatar</strong> (tùy chọn). <br>– Bật <strong>Kích hoạt*</strong>. <br>– Chọn <strong>Danh mục*</strong>.</li>
+              <li>Bấm <strong>Tạo lớp học</strong> để hoàn tất.</li>
+            </ol>
+          </div>
+          <div class="media-image">
+            <img src="taolophoc.png" alt="Ảnh minh họa">
+          </div>
+        </div>
       </section>
 
       <section id="lich-hoc" class="guide-block">
@@ -214,24 +205,26 @@ index.html
           <li class="note-step"><span class="note">Có thể đổi phòng, giáo viên, giờ ngay trên từng buổi.</span></li>
         </ol>
       </section>
-<section id="phe-duyet-tt" class="guide-block">
-  <h2>✅ 5. Cài đặt phê duyệt</h2>
-  <ol class="steps">
-    <li>Bấm avatar góc phải → chọn <strong>Cài đặt phê duyệt</strong>.</li>
-    <li>Màn hình gồm 4 mục phê duyệt: <strong>Nộp tiền</strong>, <strong>Hoàn tiền</strong>, 
-        <strong>Đăng ký chương trình</strong>, <strong>Bảo lưu chương trình</strong>.</li>
-    <li>Vào từng mục:
-      <br>– Chọn <strong>Hình thức</strong> phê duyệt (ví dụ: <em>Chỉ cần 1 người phê duyệt</em>).
-      <br>– Thêm <strong>Người phê duyệt</strong> (nhấn <em>+ Người phê duyệt</em>). 
-      <span class="note">Hiện quy định là <strong>Giám đốc trung tâm</strong>.</span>
-    </li>
-    <li>Nếu cần nhiều bước, bấm <strong>Thêm step mới</strong> để tạo bước phê duyệt nối tiếp.</li>
-    <li>Bấm <strong>Lưu</strong> để áp dụng cấu hình.</li>
-    <li class="note-step"><span class="note">Có thể kéo–thả thay đổi thứ tự step. Thiết lập được áp dụng theo trung tâm đang thao tác.</span></li>
-  </ol>
-</section>
+
+      <section id="phe-duyet-tt" class="guide-block">
+        <h2>✅ 5. Cài đặt phê duyệt</h2>
+        <ol class="steps">
+          <li>Bấm avatar góc phải → chọn <strong>Cài đặt phê duyệt</strong>.</li>
+          <li>Màn hình gồm 4 mục phê duyệt: <strong>Nộp tiền</strong>, <strong>Hoàn tiền</strong>, 
+              <strong>Đăng ký chương trình</strong>, <strong>Bảo lưu chương trình</strong>.</li>
+          <li>Vào từng mục:
+            <br>– Chọn <strong>Hình thức</strong> phê duyệt (ví dụ: <em>Chỉ cần 1 người phê duyệt</em>).
+            <br>– Thêm <strong>Người phê duyệt</strong> (nhấn <em>+ Người phê duyệt</em>).
+            <span class="note">Hiện quy định là <strong>Giám đốc trung tâm</strong>.</span>
+          </li>
+          <li>Nếu cần nhiều bước, bấm <strong>Thêm step mới</strong> để tạo bước phê duyệt nối tiếp.</li>
+          <li>Bấm <strong>Lưu</strong> để áp dụng cấu hình.</li>
+          <li class="note-step"><span class="note">Có thể kéo–thả thay đổi thứ tự step. Thiết lập được áp dụng theo trung tâm đang thao tác.</span></li>
+        </ol>
+      </section>
     </div>
   </main>
+
   <script>
     (function(){
       const tocLinks = document.querySelectorAll('.toc a');
