@@ -52,23 +52,27 @@
   .media-image img{width:100%;height:auto;border:1px solid #ddd;border-radius:8px;display:block;}
 
   /* Mobile <= 960px: full width và xếp dọc */
-  @media (max-width: 960px){
-    .container{
-      width: 100%;
-      display: block;
-      padding: 16px;
-    }
-    .toc{
-      position:sticky;top:8px;left:auto;width:auto;
-      border:1px solid #e5e7eb;background:#fff;box-shadow:none;margin-bottom:12px
-    }
-    .content{margin-left:0}
-    .media-row{display:block}
-    .media-text,.media-image{max-width:100%}
+@media (max-width: 960px){
+  .container{
+    width: 100%;
+    display: block;
+    padding: 16px;
   }
+  .toc{
+    position: static;       /* ❌ bỏ sticky → hiển thị bình thường */
+    top: auto;
+    left: auto;
+    width: auto;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    box-shadow:none;
+    margin-bottom:12px;
+  }
+  .content{margin-left:0}
+  .media-row{display:block}
+  .media-text,.media-image{max-width:100%}
+}
 
-  header h1{color:var(--text)} /* giữ màu tiêu đề đồng nhất */
-</style>
 
 </head>
 <body>
