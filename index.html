@@ -24,35 +24,46 @@
     padding-top:120px;
   }
 
-  /* Khung chính */
-  .container{
-    width:95vw; margin:0 auto; padding:24px;
-    display:flex; gap:16px;
-  }
+ .container {
+  width: 95vw;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  gap: 24px;           /* tạo khoảng cách thoáng hơn */
+  align-items: flex-start;
+}
 
-/* Thay thế block .toc hiện tại bằng: */
-.toc{
-  position: fixed;      /* was: sticky */
-  left: 16px;
-  top: 140px;           /* điều chỉnh 80–140 tùy header */
-  width: 260px;
+/* TOC bên trái, cố định */
+.toc {
+  position: sticky;     /* giữ khi cuộn */
+  top: 120px;           /* cách header */
+  flex: 0 0 240px;      /* cố định chiều rộng ~240px */
   border: 2px solid var(--accent);
   border-radius: var(--radius);
-  padding: 12px;
-  background:#f8fafc;
-  font-size:16px;
-  max-height: calc(100vh - 160px);
-  overflow:auto;
-  box-shadow:0 4px 14px rgba(0,0,0,.08);
-  z-index: 1001;        /* > header */
+  padding: 16px;
+  background: #f8fafc;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
 }
-/* Vì .toc fixed, nhường chỗ trong layout: */
-.content{ margin-left: 300px; }  /* khớp width + khoảng hở */
 
-/* Mobile giữ TOC thường */
-@media (max-width:960px){
-  .toc{ position: static; width:auto; left:auto; top:auto; z-index:auto; max-height:none; }
-  .content{ margin-left: 0; }
+/* Content lấp đầy phần còn lại */
+.content {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+/* Mobile: mục lục nằm trên, không chiếm cột riêng */
+@media (max-width: 960px) {
+  .container { display: block; }
+  .toc {
+    position: static;
+    width: auto;
+    margin-bottom: 16px;
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
 }
 
 
