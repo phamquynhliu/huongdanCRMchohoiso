@@ -36,6 +36,7 @@
     border:2px solid var(--accent); border-radius:var(--radius); padding:12px;
     background:#f8fafc; font-size:16px; height:max-content; max-height:80vh;
     overflow-y:auto; box-shadow:0 4px 14px rgba(0,0,0,0.08); z-index:10;
+    .container{ align-items: flex-start; }  /* tránh căn giữa theo trục dọc làm lạ layout */
   }
   .toc a{display:block;padding:5px 8px;border-radius:6px;color:inherit;text-decoration:none;font-size:16px;line-height:1.35}
   .toc a:hover{background:#eaf2ff}
@@ -48,6 +49,7 @@
   margin-left: 0;
   font-size: 18px;     /* ↑ trước là 17px */
   line-height: 1.75;   /* ↑ nhẹ cho dễ đọc */
+  .container{ align-items: flex-start; }  /* tránh căn giữa theo trục dọc làm lạ layout */
 }
 
 /* Khối nội dung */
