@@ -5,67 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MOON - ARMY : Hướng dẫn sử dụng CRM (Trung tâm)</title>
 <style>
-  :root { --bg:#fff; --text:#0f172a; --muted:#6b7280; --accent:#2563eb; --radius:16px; }
+:root{--bg:#fff;--text:#0f172a;--muted:#6b7280;--accent:#2563eb;--radius:12px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);background:var(--bg);line-height:1.6;padding-top:120px}
 
-  html{scroll-behavior:smooth}
-
-  /* Header cố định */
-  header{
-    position: fixed; top:0; left:0; width:100%;
-    z-index:1000; background:#f9fafb; border-bottom:2px solid #e5e7eb;
-    padding:20px 16px;
-  }
-  header h1{margin:0;text-align:center;font-size:32px;font-weight:800;letter-spacing:.3px;color:var(--text)}
-
-  /* Chừa chỗ cho header */
-  body{
-    margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;
-    color:var(--text); background:var(--bg); line-height:1.55;
-    padding-top:120px;
-  }
-
- .container {
-  width: 95vw;
-  margin: 0 auto;
-  padding: 24px;
-  display: flex;
-  gap: 24px;           /* tạo khoảng cách thoáng hơn */
-  align-items: flex-start;
+/* ===== Bố cục 2 cột trong khung 95vw ===== */
+.container{
+  width:95vw; margin:0 auto; padding:0 24px 48px;
+  display:grid; grid-template-columns:260px 1fr; gap:32px;
+  align-items:start;
 }
 
-/* TOC bên trái, cố định */
-.toc {
-  position: sticky;     /* giữ khi cuộn */
-  top: 120px;           /* cách header */
-  flex: 0 0 240px;      /* cố định chiều rộng ~240px */
-  border: 2px solid var(--accent);
-  border-radius: var(--radius);
-  padding: 16px;
-  background: #f8fafc;
-  font-size: 15px;
-  line-height: 1.5;
-  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+/* ===== TOC: sidebar trái, phẳng – tinh ===== */
+.toc{
+  position:sticky; top:120px;
+  border:1px solid #e5e7eb; background:#fff; border-radius:var(--radius);
+  padding:14px; box-shadow:0 2px 10px rgba(0,0,0,.04);
+  font-size:15px; line-height:1.5;
+}
+.toc strong{display:block;margin:4px 0 10px;font-weight:800}
+.toc em{
+  display:block; margin:12px 0 6px; color:#111827; font-style:normal;
+  font-weight:800; font-size:12px; letter-spacing:.06em; opacity:.9;
+}
+.toc a{
+  display:block; position:relative;
+  padding:8px 10px 8px 14px; margin:2px 0;
+  border-radius:10px; color:inherit; text-decoration:none;
+}
+.toc a:hover{ background:#f3f4f6 }
+.toc a.active{
+  background:#eef2ff; font-weight:700;
+}
+.toc a.active::before{
+  content:""; position:absolute; left:4px; top:6px; bottom:6px; width:3px;
+  background:var(--accent); border-radius:3px;
 }
 
-/* Content lấp đầy phần còn lại */
-.content {
-  flex: 1;
-  font-size: 18px;
-  line-height: 1.75;
+/* ===== Content ===== */
+.content{ font-size:18px; line-height:1.75; }
+.guide-block{
+  background:#fff; border:1px solid #e5e7eb; border-radius:16px;
+  padding:16px 18px; margin:22px 0; scroll-margin-top:90px;
 }
+.guide-block h2{margin:0 0 10px;font-size:22px}
 
-/* Mobile: mục lục nằm trên, không chiếm cột riêng */
-@media (max-width: 960px) {
-  .container { display: block; }
-  .toc {
-    position: static;
-    width: auto;
-    margin-bottom: 16px;
-    box-shadow: none;
-    border: 1px solid #e5e7eb;
-  }
+/* Ảnh trong nội dung */
+.media-image img{width:100%; height:auto; border:1px solid #e5e7eb; border-radius:10px}
+
+/* ===== Mobile: TOC nằm trên, không tách cột ===== */
+@media (max-width: 960px){
+  .container{display:block; width:100%; padding:0 16px 24px}
+  .toc{position:static; border:1px solid #e5e7eb; box-shadow:none; margin-bottom:12px}
+  .content{font-size:16px; line-height:1.65}
 }
-
 
   /* === MEDIA LAYOUT: ảnh xuống 1 dòng, rộng 80% (desktop) === */
   .media-row{display:block;}                 /* không chia 2 cột nữa */
