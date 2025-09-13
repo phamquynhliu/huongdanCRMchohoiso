@@ -212,62 +212,58 @@ header h1{margin:0;font-size:32px;font-weight:900;letter-spacing:.3px}
           <li class="note-step"><span class="note">Trung tâm chỉ được áp dụng voucher sau khi phân phối.</span></li>
         </ol>
       </section>
-
-     <section id="phan-quyen" class="guide-block">
- <section id="phan-quyen">
+    
+<section id="phan-quyen">
   <h2>⚙️ 4. Phân quyền</h2>
 
-  <ol class="steps">
-    <li class="note-step">
-      <span class="note">
-        Trước khi phân quyền vào từng trung tâm/folder, cần có <strong>user trong hệ thống</strong>.
-        Nếu đã thêm nhân viên vào <strong>Phòng ban</strong> thì hệ thống tự tạo user giúp bạn.
-      </span>
-    </li>
+  <!-- Note -->
+  <div class="note-step">
+    <span class="note">
+      Trước khi phân quyền vào từng trung tâm/folder, cần có <strong>user trong hệ thống</strong>.
+      Nếu đã thêm nhân viên vào <strong>Phòng ban</strong> thì hệ thống tự tạo user giúp bạn.
+    </span>
+  </div>
 
-    <!-- 4.1 -->
-    <li>
-      <h3>4.1. Phân quyền cho Giám đốc trung tâm, các Leader</h3>
+  <!-- 4.1 -->
+  <div class="phan-quyen-block">
+    <h3>4.1. Phân quyền cho Giám đốc trung tâm, các Leader</h3>
+    <ol class="steps">
+      <li>
+        Quản lý quyền theo từng trung tâm. Ở đây phân quyền cho các tài khoản có quyền cao (giám đốc trung tâm, leader).<br>
+        Vào <strong>Trụ sở chính → Phân quyền</strong> → chọn tab <strong>Trung tâm</strong>.
+        <div class="media-image">
+          <img src="phanq1.png" alt="Tab Trung tâm - màn hình phân quyền" class="zoomable">
+        </div>
+      </li>
+      <li>Chọn <strong>Trung tâm</strong> ở danh sách bên trái cần phân quyền.</li>
+      <li>Bấm <strong>nút 3 gạch ở góc phải</strong> để <strong>Thêm người dùng vào trung tâm</strong> → nhập tên/username để tìm nhân viên.</li>
+      <li>
+        Chọn <strong>Quyền</strong> cho nhân viên:
+        <ul class="dash">
+          <li>Tích <strong>Đọc</strong>, <strong>Thêm</strong>, <strong>Chỉnh sửa</strong>, <strong>Xóa</strong> (4 quyền thao tác chính).</li>
+          <li><strong>Admin</strong> chỉ chọn khi muốn người này <strong>cũng được phép phân quyền cho người khác</strong>.</li>
+        </ul>
+        <div class="media-image">
+          <img src="phanq2.png" alt="Chọn quyền: Đọc, Thêm, Chỉnh sửa, Xóa, Admin" class="zoomable">
+        </div>
+      </li>
+      <li>Bấm <strong>Lưu lại</strong> để hoàn tất.</li>
+      <li>(Tuỳ tổ chức) Vào tab <strong>Người dùng mới</strong> để duyệt nhanh các quyền vừa thêm.</li>
+      <li>Có thể xem tab <strong>Lịch sử phân quyền</strong> để tra soát các lần cấp/bỏ quyền trước đó.</li>
+    </ol>
+  </div>
 
-      <ol class="steps">
-        <li>
-          Quản lý quyền theo từng trung tâm. Ở đây phân quyền cho các tài khoản có quyền cao (giám đốc trung tâm, leader).<br>
-          Vào <strong>Trụ sở chính → Phân quyền</strong> → chọn tab <strong>Trung tâm</strong>.
-          <div class="media-image">
-            <img src="phanq1.png" alt="Tab Trung tâm - màn hình phân quyền" class="zoomable">
-          </div>
-        </li>
+  <!-- 4.2 -->
+  <div class="phan-quyen-block">
+    <h3>4.2. Phân quyền cho từng nhân viên</h3>
+    <!-- TODO: Bổ sung nội dung hướng dẫn chi tiết sau -->
+  </div>
 
-        <li>Chọn <strong>Trung tâm</strong> ở danh sách bên trái cần phân quyền.</li>
-
-        <li>Bấm <strong>nút 3 gạch ở góc phải</strong> để <strong>Thêm người dùng vào trung tâm</strong> → nhập tên/username để tìm nhân viên.</li>
-
-        <li>
-          Chọn <strong>Quyền</strong> cho nhân viên:
-          <ul class="dash">
-            <li>Tích <strong>Đọc</strong>, <strong>Thêm</strong>, <strong>Chỉnh sửa</strong>, <strong>Xóa</strong> (4 quyền thao tác chính).</li>
-            <li><strong>Admin</strong> chỉ chọn khi muốn người này <strong>cũng được phép phân quyền cho người khác</strong>.</li>
-          </ul>
-
-          <div class="media-image">
-            <img src="phanq2.png" alt="Chọn quyền: Đọc, Thêm, Chỉnh sửa, Xóa, Admin" class="zoomable">
-          </div>
-        </li>
-
-        <li>Bấm <strong>Lưu lại</strong> để hoàn tất.</li>
-
-        <li>(Tuỳ tổ chức) Vào tab <strong>Người dùng mới</strong> để duyệt nhanh các quyền vừa thêm.</li>
-
-        <li>Có thể xem tab <strong>Lịch sử phân quyền</strong> để tra soát các lần cấp/bỏ quyền trước đó.</li>
-      </ol>
-    </li>
-
-    <!-- 4.2 -->
-    <li>
-      <h3>4.2. Phân quyền cho từng nhân viên</h3>
-      <!-- TODO: Bổ sung nội dung hướng dẫn chi tiết sau -->
-    </li>
-  </ol>
+  <!-- 4.3 (nếu có) -->
+  <div class="phan-quyen-block">
+    <h3>4.3. ...</h3>
+    <!-- TODO -->
+  </div>
 </section>
 
 
